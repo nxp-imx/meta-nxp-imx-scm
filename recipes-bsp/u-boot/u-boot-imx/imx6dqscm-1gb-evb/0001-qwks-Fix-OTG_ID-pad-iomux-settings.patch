@@ -1,0 +1,39 @@
+From 0dbd8c5b1c560a4bbfa442b09769bab36d0dc683 Mon Sep 17 00:00:00 2001
+From: Juan Gutierrez <juan.gutierrez@nxp.com>
+Date: Fri, 22 Apr 2016 16:14:45 -0500
+Subject: [PATCH 1/2] qwks: Fix OTG_ID pad iomux settings
+
+OTG_ID iomux pad was missconfigured and not selecting the
+GPIO1 Alternative, as a consequence when connecting a USB
+device the PWR_EN was disabled.
+
+Signed-off-by: Juan Gutierrez <juan.gutierrez@nxp.com>
+---
+ board/freescale/mx6dqscmqwks/mx6dqscmqwks.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/board/freescale/mx6dqscmqwks/mx6dqscmqwks.c b/board/freescale/mx6dqscmqwks/mx6dqscmqwks.c
+index 8047ae7..54c980c 100644
+--- a/board/freescale/mx6dqscmqwks/mx6dqscmqwks.c
++++ b/board/freescale/mx6dqscmqwks/mx6dqscmqwks.c
+@@ -977,7 +977,7 @@ int board_eth_init(bd_t *bis)
+ 
+ static iomux_v3_cfg_t const usb_otg_pads[] = {
+ 	MX6_PAD_EIM_D22__USB_OTG_PWR | MUX_PAD_CTRL(NO_PAD_CTRL),
+-	MX6_PAD_ENET_RX_ER__USB_OTG_ID | MUX_PAD_CTRL(OTG_ID_PAD_CTRL),
++	MX6_PAD_GPIO_1__USB_OTG_ID | MUX_PAD_CTRL(OTG_ID_PAD_CTRL),
+ };
+ 
+ static iomux_v3_cfg_t const usb_hc1_pads[] = {
+@@ -993,7 +993,7 @@ static void setup_usb(void)
+ 	 * set daisy chain for otg_pin_id on 6q.
+ 	 * for 6dl, this bit is reserved
+ 	 */
+-	imx_iomux_set_gpr_register(1, 13, 1, 0);
++	imx_iomux_set_gpr_register(1, 13, 1, 1);
+ 
+ 	imx_iomux_v3_setup_multiple_pads(usb_hc1_pads,
+ 					 ARRAY_SIZE(usb_hc1_pads));
+-- 
+2.7.4
+
