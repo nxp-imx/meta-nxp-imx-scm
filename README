@@ -21,9 +21,6 @@ Note this downloads the latest patches on top of the 3.14.52-1.1.0 GA release.
 
 If the GA release was downloaded before just do repo sync to fetch latest updates.
 
-To checkout the GA release without scm patches do the following:
-$: cd sources/meta-fsl-bsp-release
-$: git checkout scm-imx_3.14.52_1.1.0_ga
 
 Setup for a particular graphical backend.
 -----------------------------------------
