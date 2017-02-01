@@ -1,43 +1,87 @@
 NXP's Community Yocto BSP for SCM-i.MX
-=======================================
+======================================
 
 To get the BSP you need to have `repo` installed.
 
 Install the `repo` utility: (only need to do this once):
---------------------------------------------------
+--------------------------------------------------------
 $: mkdir ~/bin
 $: curl http://commondatastorage.googleapis.com/git-repo-downloads/repo  > ~/bin/repo
 $: chmod a+x ~/bin/repo
 $: PATH=${PATH}:~/bin
 
-Download the BSP Yocto Project Environment into your directory:
--------------------------------------------
 
+Download the Yocto Project Environment into your directory:
+-----------------------------------------------------------
 $: mkdir fsl-arm-yocto-bsp
 $: cd fsl-arm-yocto-bsp
+$: repo init -u git://git.freescale.com/imx/fsl-arm-yocto-bsp.git -b scm-imx-4.1-krogoth [-m <manifest>]
+$: repo sync
 
-For the krogoth SCM use this manfiest
-$: repo init -u http://sw-stash.freescale.net/scm/imx/fsl-arm-yocto-bsp.git -b scm-krogoth-internal
+<manifest>                      Description
+default.xml                     The latest SCM BSP GA release [1]
+                                (this is the default value)
+scm-imx-<version>.xml           SCM BSP GA release
+imx-<version>.xml               Discrete(NO SCM) release the SCM is based on
+                                Use this just for reference. It does not include
+                                the meta-nxp-scm-layer
 
+[1] When the default manifest is used, the project environment can be updated
+to the latest release via repo sync.
+
+For errors with repo init, remove the .repo directory and run repo init again.
+
+See ChangeLog for description of patch releases and tags for each update.
+
+Examples
+--------
+To download the SCM 4.1.15-2.0.0_ga release
+repo init -u git://git.freescale.com/imx/fsl-arm-yocto-bsp.git -b scm-imx-4.1-krogoth
 or
-$: repo init -u http://sw-stash.freescale.net/scm/imx/fsl-arm-yocto-bsp.git -b krogoth-internal -m scm-int-4.1.15-2.0.0.xml
+repo init -u git://git.freescale.com/imx/fsl-arm-yocto-bsp.git -b scm-imx-4.1-krogoth -m scm-imx-4.1.15-2.0.0.xml
 
-
-Setup for a particular graphical backend.
+Setup the build folder for a BSP release:
 -----------------------------------------
-The example uses the imx6dqscm-1gb-qwks MACHINE but substitute this with whatever you are using:
+Note: The remaining instructions are for setting up a BSP release only.
+
+$: [MACHINE=<machine>] [DISTRO=fsl-imx-<backend>] source ./fsl-setup-release.sh -b bld-<backend>
+
+The <machine> options for MX6 SCM (supported by meta-nxp-scm-layer) are:
+ - MX6DQSCM:
+    imx6dqscm-1gb-qwks
+    imx6dqscm-epop-qwks
+    imx6dqscm-1gb-qwks-rev3
+    imx6dqscm-1gb-evb
+    imx6dqscm-2gb-evb
+ - MX6SXSCM:
+    imx6sxscm-1gb-evb
+    imx6sxscm-512mb-evb
+    imx6sxscm-epop-evb
+
+<backend>   Graphics backend type
+x11         X11 (this is the default if DISTRO is unspecified)
+wayland     Wayland
+xwayland    Wayland with XWayland support
+fb          Framebuffer
+
+Note DirectFB is not supported in 4.1.15 release.
+
+Note if the poky community distro is used then build breaks will happen with some
+components using our meta-fsl-bsp-release layer.
+
+Examples:
 
 Setup for X11.
-$: MACHINE=imx6dqscm-1gb-qwks DISTRO=fsl-imx-x11 source ./fsl-setup-release.sh -b build-x11
+$: MACHINE=imx6dqscm-1gb-qwks-rev3 DISTRO=fsl-imx-x11 source ./fsl-setup-release.sh -b build-x11
 
 Setup for Wayland.
-$: MACHINE=imx6dqscm-1gb-qwks DISTRO=fsl-imx-wayland source ./fsl-setup-release.sh -b build-wayland
+$: MACHINE=imx6dqscm-1gb-qwks-rev3 DISTRO=fsl-imx-wayland source ./fsl-setup-release.sh -b build-wayland
 
 Setup for Wayland and X11.
-$: MACHINE=imx6dqscm-1gb-qwks DISTRO=fsl-imx-xwayland source ./fsl-setup-release.sh -b build-xwayland
+$: MACHINE=imx6dqscm-1gb-qwks-rev3 DISTRO=fsl-imx-xwayland source ./fsl-setup-release.sh -b build-xwayland
 
 Setup for Frame Buffer.
-$: MACHINE=imx6dqscm-1gb-qwks DISTRO=fsl-imx-fb source ./fsl-setup-release.sh -b build-fb
+$: MACHINE=imx6dqscm-1gb-qwks-rev3 DISTRO=fsl-imx-fb source ./fsl-setup-release.sh -b build-fb
 
 
 Build an image:
