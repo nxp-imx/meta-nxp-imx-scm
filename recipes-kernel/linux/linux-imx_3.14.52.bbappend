@@ -41,6 +41,7 @@ SRC_URI += " \
     file://0035-ARM-dtb-IMX6DQSCM-512MB-ePoP-support.patch \
     file://0036-Enable-1gb-and-2gb-for-hvb-on-imx6dqscm.patch \
     file://0037-ARM-dtb-IMX6DQSCMQWKS-eMMC-support.patch \
+    file://0001-ARM-dtb-increase-lpddr2-voltage-to-1.25V.patch \
 "
 python do_patch_prepend() {
     import subprocess

@@ -1,0 +1,28 @@
+From 45a155fd00ed10548b03d652dbe96fae4fad5a8a Mon Sep 17 00:00:00 2001
+From: Juan Gutierrez <juan.gutierrez@nxp.com>
+Date: Thu, 9 Mar 2017 16:00:14 -0600
+Subject: [PATCH] ARM: dtb: increase lpddr2 voltage to 1.25V
+
+Per performance test 1.25V is a more suitable voltage
+
+Signed-off-by: Juan Gutierrez <juan.gutierrez@nxp.com>
+---
+ arch/arm/boot/dts/imx6dqscm-qwks-rev2.dtsi | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/arch/arm/boot/dts/imx6dqscm-qwks-rev2.dtsi b/arch/arm/boot/dts/imx6dqscm-qwks-rev2.dtsi
+index 09ae114..dc6ca1b 100644
+--- a/arch/arm/boot/dts/imx6dqscm-qwks-rev2.dtsi
++++ b/arch/arm/boot/dts/imx6dqscm-qwks-rev2.dtsi
+@@ -200,7 +200,7 @@
+ 
+                         sw3a_reg: sw3a {
+                                 regulator-min-microvolt = <400000>;
+-                                regulator-max-microvolt = <1200000>;
++                                regulator-max-microvolt = <1250000>;
+                                 regulator-boot-on;
+                                 regulator-always-on;
+                         };
+-- 
+2.7.4
+

@@ -1,0 +1,269 @@
+From 3f8322c9994847787255d226ada32c6b68eec143 Mon Sep 17 00:00:00 2001
+From: Alejandro Sierra <b18039@freescale.com>
+Date: Tue, 17 Jan 2017 11:52:38 -0600
+Subject: [PATCH 3/4] mx6dqscmqwks: redefine calibration values for 2gb setup
+
+Adjust DCD values per performance testing
+
+Signed-off-by: Alejandro Sierra <b18039@freescale.com>
+---
+ .../freescale/mx6dqscmqwks/imximage_scm_lpddr2.cfg | 80 ++++++++++------------
+ 1 file changed, 36 insertions(+), 44 deletions(-)
+
+diff --git a/board/freescale/mx6dqscmqwks/imximage_scm_lpddr2.cfg b/board/freescale/mx6dqscmqwks/imximage_scm_lpddr2.cfg
+index 6529c54..b440f03 100755
+--- a/board/freescale/mx6dqscmqwks/imximage_scm_lpddr2.cfg
++++ b/board/freescale/mx6dqscmqwks/imximage_scm_lpddr2.cfg
+@@ -1,10 +1,9 @@
+ /*
+- * Copyright (C) 2011-2015 Freescale Semiconductor, Inc.
+- * Jason Liu <r64343@freescale.com>
++ * Copyright (C) 2016 Freescale Semiconductor, Inc.
+  *
+- * SPDX-License-Identifier:	GPL-2.0+
++ * SPDX-License-Identifier: GPL-2.0+
+  *
+- * Refer doc/README.imximage for more details about how-to configure
++ * Refer docs/README.imxmage for more details about how-to configure
+  * and create imximage boot image
+  *
+  * The syntax is taken as close as possible with the kwbimage
+@@ -26,11 +25,11 @@ BOOT_FROM	sd
+ 
+ #ifdef CONFIG_USE_PLUGIN
+ /*PLUGIN    plugin-binary-file    IRAM_FREE_START_ADDR*/
+-PLUGIN	board/freescale/mx6dscmhvb/plugin.bin 0x00907000
++PLUGIN	board/freescale/mx6dscm/plugin.bin 0x00907000
+ #else
+ 
+ #ifdef CONFIG_SECURE_BOOT
+-CSF 0x2000
++CSF CONFIG_CSF_SIZE
+ #endif
+ 
+ /*
+@@ -44,12 +43,13 @@ CSF 0x2000
+  *	Address	  absolute address of the register
+  *	value	  value to be stored in the register
+  */
++
+ #ifdef CONFIG_SCM_LPDDR2_512MB
+ /* DCD */
+ /* DDR clock to 400MHz */
+-DATA 4, 0x020C4018 0x00060324 
++DATA 4, 0x020C4018 0x00060324
+ /* AHB_ROOT_CLK change divide ratio from 4 to 3 for ENET */
+-DATA 4, 0x020C4014 0x00018900 
++DATA 4, 0x020C4014 0x00018900
+ 
+ DATA 4 0x020C4018 0x00060324
+ 
+@@ -139,33 +139,23 @@ DATA 4 0x021b0010 0x00100a82
+ DATA 4 0x021b0014 0x00000093
+ 
+ DATA 4 0x021b0018 0x0000174C
+-DATA 4 0x021b001c 0x00008000
++DATA 4 0x021b001c 0x00008010
+ DATA 4 0x021b002c 0x0f9f26d2
+ DATA 4 0x021b0030 0x00000010
+ DATA 4 0x021b0038 0x00190778
+ 
+-//FIX MODE
++/* 1-Ch Mode */
+ DATA 4 0x021b0040 0x0000004f
+ 
+-//DATA 4 0x021b0400 0x11420000
+-
+ DATA 4 0x021b0000 0x83110000
+ 
+-
+-// Channel 0 
++/* Channel 0 */
+ DATA 4 0x021b001c 0x003f8030
+ DATA 4 0x021b001c 0xff0a8030
+ DATA 4 0x021b001c 0x82018030
+ DATA 4 0x021b001c 0x04028030
+ DATA 4 0x021b001c 0x04038030
+ 
+-// Channel 1 
+-//DATA 4 0x021b401c 0x003f8030
+-//DATA 4 0x021b401c 0xff0a8030
+-//DATA 4 0x021b401c 0x82018030
+-//DATA 4 0x021b401c 0x04028030
+-//DATA 4 0x021b401c 0x04038030
+-
+ DATA 4 0x021b0800 0xa1390003
+ 
+ DATA 4 0x021b0020 0x00001800
+@@ -192,6 +182,7 @@ DATA 4 0x020e0010 0xF00000CF
+ /* set IPU AXI-id0 Qos=0xf(bypass) AXI-id1 Qos=0x7 */
+ DATA 4 0x020e0018 0x007F007F
+ DATA 4 0x020e001c 0x007F007F
++
+ #elif CONFIG_SCM_LPDDR2_2GB
+ /* DDR clock to 400MHz */
+ DATA 4, 0x020C4018 0x00060324
+@@ -201,6 +192,8 @@ DATA 4, 0x020C4014 0x00018900
+ DATA 4, 0x020e0798, 0x00080000
+ DATA 4, 0x020e0758, 0x00000000
+ 
++
++
+ DATA 4, 0x020E0588, 0x00000020
+ DATA 4, 0x020E0594, 0x00000020
+ 
+@@ -262,7 +255,7 @@ DATA 4, 0x021b0848, 0x44404044
+ DATA 4, 0x021b4848, 0x44443A46
+ 
+ DATA 4, 0x021b0850, 0x34343A38
+-DATA 4, 0x021b4850, 0x3E2E483C
++DATA 4, 0x021b4850, 0x382F3835
+ 
+ DATA 4, 0x021b083c, 0x20000000
+ DATA 4, 0x021b0840, 0x00000000
+@@ -298,7 +291,7 @@ DATA 4, 0x021b0010, 0x00100a82
+ DATA 4, 0x021b0014, 0x00000093
+ 
+ DATA 4, 0x021b0018, 0x0000174C
+-DATA 4, 0x021b001c, 0x00008000
++DATA 4, 0x021b001c, 0x00008010
+ DATA 4, 0x021b002c, 0x0f9f26d2
+ DATA 4, 0x021b0030, 0x009F0E10
+ DATA 4, 0x021b0038, 0x00190778
+@@ -309,8 +302,6 @@ DATA 4, 0x021b0040, 0x00000053
+ DATA 4, 0x021b0040, 0x0000004f
+ #endif
+ 
+-DATA 4, 0x021b0400, 0x11420000
+-
+ DATA 4, 0x021b0000, 0xc3110000
+ 
+ DATA 4, 0x021b4004, 0x00020036
+@@ -323,10 +314,12 @@ DATA 4, 0x021b4010, 0x00100a82
+ DATA 4, 0x021b4014, 0x00000093
+ 
+ DATA 4, 0x021b4018, 0x0000174C
+-DATA 4, 0x021b401c, 0x00008000
++DATA 4, 0x021b401c, 0x00008010
++
+ DATA 4, 0x021b402c, 0x0f9f26d2
+ 
+ DATA 4, 0x021b4030, 0x009F0E10
++
+ DATA 4, 0x021b4038, 0x00190778
+ 
+ #ifdef CONFIG_INTERLEAVING_MODE
+@@ -335,38 +328,39 @@ DATA 4, 0x021b4040, 0x00000013
+ DATA 4, 0x021b4040, 0x00000017
+ #endif
+ 
+-DATA 4, 0x021b4400, 0x11420000
+-
+ DATA 4, 0x021b4000, 0xc3110000
+ 
+-// Channel 0
+-// CS0
++/* Channel 0 */
++/* CS0 */
+ DATA 4, 0x021b001c, 0x003f8030
+ DATA 4, 0x021b001c, 0xff0a8030
+ DATA 4, 0x021b001c, 0x82018030
+ DATA 4, 0x021b001c, 0x04028030
+ DATA 4, 0x021b001c, 0x04038030
+-//CS1
++DATA 4, 0x021b001c, 0x01038030
++/* CS1 */
+ DATA 4, 0x021b001c, 0x003f8038
+ DATA 4, 0x021b001c, 0xff0a8038
+ DATA 4, 0x021b001c, 0x82018038
+ DATA 4, 0x021b001c, 0x04028038
+ DATA 4, 0x021b001c, 0x04038038
++DATA 4, 0x021b001c, 0x01038038
+ 
+-// Channel 1 
+-// CS0
++/* Channel 1 */
++/* CS0 */
+ DATA 4, 0x021b401c, 0x003f8030
+ DATA 4, 0x021b401c, 0xff0a8030
+ DATA 4, 0x021b401c, 0x82018030
+ DATA 4, 0x021b401c, 0x04028030
+ DATA 4, 0x021b401c, 0x04038030
+-// CS1
++DATA 4, 0x021b401c, 0x01038030
++/* CS1 */
+ DATA 4, 0x021b401c, 0x003f8038
+ DATA 4, 0x021b401c, 0xff0a8038
+ DATA 4, 0x021b401c, 0x82018038
+ DATA 4, 0x021b401c, 0x04028038
+ DATA 4, 0x021b401c, 0x04038038
+-
++DATA 4, 0x021b401c, 0x01038038
+ DATA 4, 0x021b4800, 0xa1390003
+ 
+ DATA 4, 0x021b0020, 0x00001800
+@@ -398,17 +392,20 @@ DATA 4, 0x020e0010, 0xF00000CF
+ /* set IPU AXI-id0 Qos=0xf(bypass) AXI-id1 Qos=0x7 */
+ DATA 4, 0x020e0018, 0x007F007F
+ DATA 4, 0x020e001c, 0x007F007F
++
+ #else
+ /* DCD */
+ /* DDR clock to 400MHz */
+-DATA 4, 0x020C4018 0x00060324 
++DATA 4, 0x020C4018 0x00060324
+ /* AHB_ROOT_CLK change divide ratio from 4 to 3 for ENET */
+-DATA 4, 0x020C4014 0x00018900 
++DATA 4, 0x020C4014 0x00018900
+ 
+ /* DSE to 80 ohms, 100K PD on DQS */
+ DATA 4 0x020e0798 0x00080000
+ DATA 4 0x020e0758 0x00000000
+ 
++
++
+ DATA 4, 0x020E0588, 0x00000020
+ DATA 4, 0x020E0594, 0x00000020
+ 
+@@ -514,7 +511,7 @@ DATA 4, 0x021b0010, 0x00100a82
+ DATA 4, 0x021b0014, 0x00000093
+ 
+ DATA 4, 0x021b0018, 0x0000174C
+-DATA 4, 0x021b001c, 0x00008000
++DATA 4, 0x021b001c, 0x00008010
+ DATA 4, 0x021b002c, 0x0f9f26d2
+ DATA 4, 0x021b0030, 0x00000010
+ DATA 4, 0x021b0038, 0x00190778
+@@ -524,11 +521,8 @@ DATA 4, 0x021b0040, 0x00000053
+ DATA 4, 0x021b0040, 0x0000004f
+ #endif
+ 
+- //DATA 4, 0x021b0400, 0x114200F0  //MMDC0_MAARCR ADOPT optimized priorities. Dyn jump disabled
+-
+ DATA 4, 0x021b0000, 0x83110000
+ 
+-
+ DATA 4, 0x021b4008, 0x00000000
+ 
+ DATA 4, 0x021b400c, 0x33374133
+@@ -538,7 +532,7 @@ DATA 4, 0x021b4010, 0x00100a82
+ DATA 4, 0x021b4014, 0x00000093
+ 
+ DATA 4, 0x021b4018, 0x0000174C
+-DATA 4, 0x021b401c, 0x00008000
++DATA 4, 0x021b401c, 0x00008010
+ 
+ DATA 4, 0x021b402c, 0x0f9f26d2
+ 
+@@ -551,8 +545,6 @@ DATA 4, 0x021b4040, 0x00000013
+ DATA 4, 0x021b4040, 0x00000017
+ #endif
+ 
+-//DATA 4, 0x021b4400, 0x11420000
+-
+ DATA 4, 0x021b4000, 0x83110000
+ 
+ /* Channel 0 */
+-- 
+2.7.4
+

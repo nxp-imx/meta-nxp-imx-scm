@@ -29,6 +29,10 @@ SRC_URI += " \
     file://0023-scm-config-Use-default-ARCR-Dynamic-Jump-params-for-.patch \
     file://0001-qwks-Fix-OTG_ID-pad-iomux-settings.patch \
     file://0002-mx6dqscmqwks-refine-calibration-values-for-2gb-setup.patch \
+    file://0001-mx6dqscmqwks-increase-LPDDR2-Voltage-to-1.25V.patch \
+    file://0002-mx6dqscmqwks-default-to-hdmi-on-qwks.patch \
+    file://0003-mx6dqscmqwks-redefine-calibration-values-for-2gb-set.patch \
+    file://0004-mx6dqscmqwks-Use-Precharge-all-only-if-banks-open-fo.patch \
 "
 python do_patch_prepend() {
     import subprocess

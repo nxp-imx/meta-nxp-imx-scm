@@ -1,0 +1,46 @@
+From 183a2073759b5abc6a58a26143387f1d88cfe022 Mon Sep 17 00:00:00 2001
+From: Juan Gutierrez <juan.gutierrez@nxp.com>
+Date: Mon, 6 Mar 2017 18:18:56 -0600
+Subject: [PATCH 2/4] mx6dqscmqwks: default to hdmi on qwks
+
+Set HDMI as the primary display on qwks board
+
+Signed-off-by: Juan Gutierrez <juan.gutierrez@nxp.com>
+---
+ include/configs/mx6dqscmqwks.h    | 4 +++-
+ include/configs/mx6sabre_common.h | 4 +++-
+ 2 files changed, 6 insertions(+), 2 deletions(-)
+
+diff --git a/include/configs/mx6dqscmqwks.h b/include/configs/mx6dqscmqwks.h
+index 3ce9360..b2037eb 100644
+--- a/include/configs/mx6dqscmqwks.h
++++ b/include/configs/mx6dqscmqwks.h
+@@ -187,7 +187,9 @@
+ 	EMMC_ENV	  \
+ 	"smp=" CONFIG_SYS_NOSMP "\0"\
+ 	"mmcargs=setenv bootargs console=${console},${baudrate} ${smp} " \
+-		"root=${mmcroot} ${dmfc} \0" \
++		"root=${mmcroot} ${dmfc} " \
++		"video=mxcfb0:dev=hdmi,1920x1080M@60,bpp=32 " \
++		"video=mxcfb1:off video=mxcfb2:off video=mxcfb3:off \0" \
+ 	"loadbootscript=" \
+ 		"fatload mmc ${mmcdev}:${mmcpart} ${loadaddr} ${script};\0" \
+ 	"bootscript=echo Running bootscript from mmc ...; " \
+diff --git a/include/configs/mx6sabre_common.h b/include/configs/mx6sabre_common.h
+index f59e8e1..6be2625 100644
+--- a/include/configs/mx6sabre_common.h
++++ b/include/configs/mx6sabre_common.h
+@@ -215,7 +215,9 @@
+ 	EMMC_ENV	  \
+ 	"smp=" CONFIG_SYS_NOSMP "\0"\
+ 	"mmcargs=setenv bootargs console=${console},${baudrate} ${smp} " \
+-		"root=${mmcroot} ${dmfc} \0" \
++		"root=${mmcroot} ${dmfc} " \
++		"video=mxcfb0:dev=hdmi,1920x1080M@60,bpp=32 " \
++		"video=mxcfb1:off video=mxcfb2:off video=mxcfb3:off \0" \
+ 	"loadbootscript=" \
+ 		"fatload mmc ${mmcdev}:${mmcpart} ${loadaddr} ${script};\0" \
+ 	"bootscript=echo Running bootscript from mmc ...; " \
+-- 
+2.7.4
+

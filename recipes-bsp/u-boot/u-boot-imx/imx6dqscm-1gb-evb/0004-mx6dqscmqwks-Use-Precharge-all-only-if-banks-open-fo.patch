@@ -1,0 +1,63 @@
+From 2bcd4842bfc0294b53af39fd9f40f6ef28950171 Mon Sep 17 00:00:00 2001
+From: Juan Gutierrez <juan.gutierrez@nxp.com>
+Date: Tue, 24 Jan 2017 16:04:13 -0600
+Subject: [PATCH 4/4] mx6dqscmqwks: Use Precharge all, only if banks open for
+ MMDCx_MDSCR[CMD]
+
+Signed-off-by: Juan Gutierrez <juan.gutierrez@nxp.com>
+---
+ board/freescale/mx6dqscmqwks/imximage_scm_lpddr2.cfg | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+
+diff --git a/board/freescale/mx6dqscmqwks/imximage_scm_lpddr2.cfg b/board/freescale/mx6dqscmqwks/imximage_scm_lpddr2.cfg
+index b440f03..69cf97f 100755
+--- a/board/freescale/mx6dqscmqwks/imximage_scm_lpddr2.cfg
++++ b/board/freescale/mx6dqscmqwks/imximage_scm_lpddr2.cfg
+@@ -139,7 +139,7 @@ DATA 4 0x021b0010 0x00100a82
+ DATA 4 0x021b0014 0x00000093
+ 
+ DATA 4 0x021b0018 0x0000174C
+-DATA 4 0x021b001c 0x00008010
++DATA 4 0x021b001c 0x00008050
+ DATA 4 0x021b002c 0x0f9f26d2
+ DATA 4 0x021b0030 0x00000010
+ DATA 4 0x021b0038 0x00190778
+@@ -291,7 +291,7 @@ DATA 4, 0x021b0010, 0x00100a82
+ DATA 4, 0x021b0014, 0x00000093
+ 
+ DATA 4, 0x021b0018, 0x0000174C
+-DATA 4, 0x021b001c, 0x00008010
++DATA 4, 0x021b001c, 0x00008050
+ DATA 4, 0x021b002c, 0x0f9f26d2
+ DATA 4, 0x021b0030, 0x009F0E10
+ DATA 4, 0x021b0038, 0x00190778
+@@ -314,7 +314,7 @@ DATA 4, 0x021b4010, 0x00100a82
+ DATA 4, 0x021b4014, 0x00000093
+ 
+ DATA 4, 0x021b4018, 0x0000174C
+-DATA 4, 0x021b401c, 0x00008010
++DATA 4, 0x021b401c, 0x00008050
+ 
+ DATA 4, 0x021b402c, 0x0f9f26d2
+ 
+@@ -511,7 +511,7 @@ DATA 4, 0x021b0010, 0x00100a82
+ DATA 4, 0x021b0014, 0x00000093
+ 
+ DATA 4, 0x021b0018, 0x0000174C
+-DATA 4, 0x021b001c, 0x00008010
++DATA 4, 0x021b001c, 0x00008050
+ DATA 4, 0x021b002c, 0x0f9f26d2
+ DATA 4, 0x021b0030, 0x00000010
+ DATA 4, 0x021b0038, 0x00190778
+@@ -532,7 +532,7 @@ DATA 4, 0x021b4010, 0x00100a82
+ DATA 4, 0x021b4014, 0x00000093
+ 
+ DATA 4, 0x021b4018, 0x0000174C
+-DATA 4, 0x021b401c, 0x00008010
++DATA 4, 0x021b401c, 0x00008050
+ 
+ DATA 4, 0x021b402c, 0x0f9f26d2
+ 
+-- 
+2.7.4
+
