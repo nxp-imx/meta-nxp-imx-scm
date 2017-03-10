@@ -15,7 +15,7 @@ Download the Yocto Project Environment into your directory:
 -----------------------------------------------------------
 $: mkdir fsl-arm-yocto-bsp
 $: cd fsl-arm-yocto-bsp
-$: repo init -u git://git.freescale.com/imx/fsl-arm-yocto-bsp.git -b scm-imx-4.1-krogoth [-m <manifest>]
+$: repo init -u git://git.freescale.com/imx/fsl-arm-yocto-bsp.git -b imx-4.1-krogoth [-m <manifest>]
 $: repo sync
 
 <manifest>                      Description
@@ -36,9 +36,8 @@ See ChangeLog for description of patch releases and tags for each update.
 Examples
 --------
 To download the SCM 4.1.15-2.0.0_ga release
-repo init -u git://git.freescale.com/imx/fsl-arm-yocto-bsp.git -b scm-imx-4.1-krogoth
-or
-repo init -u git://git.freescale.com/imx/fsl-arm-yocto-bsp.git -b scm-imx-4.1-krogoth -m scm-imx-4.1.15-2.0.0.xml
+
+repo init -u git://git.freescale.com/imx/fsl-arm-yocto-bsp.git -b imx-4.1-krogoth -m scm-imx-4.1.15-2.0.0.xml
 
 Setup the build folder for a BSP release:
 -----------------------------------------
