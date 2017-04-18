@@ -1,7 +1,7 @@
 From 2bd6bffefc4ce52348473296ba4608032abfe486 Mon Sep 17 00:00:00 2001
 From: Alejandro Sierra <Alejandro.Sierra@freescale.com>
 Date: Wed, 28 Oct 2015 12:11:41 -0600
-Subject: [PATCH 01/21] Add support for SCM 1GB Freedom X Rev1.0 board
+Subject: [PATCH 01/29] Add support for SCM 1GB Freedom X Rev1.0 board
 
 Add support for SCM 1GB Freedom X Rev1.0 board
 
@@ -2152,5 +2152,5 @@ index 0000000..64e398e
 +
 +#endif                         /* __MX6QSABRESD_CONFIG_H */
 -- 
-1.9.1
+2.7.4
 

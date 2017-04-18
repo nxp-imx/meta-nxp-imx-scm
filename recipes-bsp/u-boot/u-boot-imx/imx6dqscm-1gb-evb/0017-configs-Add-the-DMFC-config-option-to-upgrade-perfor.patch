@@ -1,7 +1,7 @@
 From 168d8ed515a1ad6fd904e4cae4fdd83acc164671 Mon Sep 17 00:00:00 2001
 From: Juan Gutierrez <juan.gutierrez@nxp.com>
 Date: Fri, 12 Feb 2016 12:31:43 -0600
-Subject: [PATCH 17/21] configs: Add the DMFC config option to upgrade
+Subject: [PATCH 17/29] configs: Add the DMFC config option to upgrade
  performance
 
 Setting dmfc=3 option as default for mx6dqscmqwks configuration.
@@ -48,5 +48,5 @@ index 424189a..f59e8e1 100644
  		"fatload mmc ${mmcdev}:${mmcpart} ${loadaddr} ${script};\0" \
  	"bootscript=echo Running bootscript from mmc ...; " \
 -- 
-1.9.1
+2.7.4
 

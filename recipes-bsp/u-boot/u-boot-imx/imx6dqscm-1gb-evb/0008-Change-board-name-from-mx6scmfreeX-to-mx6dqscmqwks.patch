@@ -1,7 +1,7 @@
 From 51b7e358ebd5f5a572f1b705a56535f7f14a5c0e Mon Sep 17 00:00:00 2001
 From: Alejandro Sierra <b18039@freescale.com>
 Date: Mon, 7 Dec 2015 08:12:48 -0600
-Subject: [PATCH 08/21] Change board name from mx6scmfreeX to mx6dqscmqwks
+Subject: [PATCH 08/29] Change board name from mx6scmfreeX to mx6dqscmqwks
 
 Change all the files where mx6scmfreeX appeared to mx6dqscmqwks, which is
 the offical name for scm reference design board on the  mx6dqscm part.
@@ -4592,5 +4592,5 @@ index 6758ba3..0000000
 -
 -#endif                         /* __MX6QSABRESD_CONFIG_H */
 -- 
-1.9.1
+2.7.4
 

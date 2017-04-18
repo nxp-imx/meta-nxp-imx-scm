@@ -1,7 +1,7 @@
 From 5a6348c94e8f0971ea89291c3ccf1607a6c2e2c6 Mon Sep 17 00:00:00 2001
 From: Alejandro Sierra <Alejandro.Sierra@freescale.com>
 Date: Wed, 4 Nov 2015 20:33:04 -0600
-Subject: [PATCH 04/21] Add more configurations for the FreedomX R1.0 board
+Subject: [PATCH 04/29] Add more configurations for the FreedomX R1.0 board
 
 	- Support for spi-nor on FreedomX R1.0 board
 	- Support for LPDDR2 interleave mode on FreedomX R1.0 board
@@ -54,5 +54,5 @@ index 0000000..c13d8b1
 +CONFIG_DM=y
 +CONFIG_DM_THERMAL=y
 -- 
-1.9.1
+2.7.4
 

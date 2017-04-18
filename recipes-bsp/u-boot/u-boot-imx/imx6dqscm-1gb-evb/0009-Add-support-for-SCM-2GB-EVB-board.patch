@@ -1,7 +1,7 @@
 From 475e4ad109dfd24396aae54808b15de57891e714 Mon Sep 17 00:00:00 2001
 From: Alejandro Sierra <b18039@freescale.com>
 Date: Fri, 11 Dec 2015 09:41:04 -0600
-Subject: [PATCH 09/21] Add support for SCM 2GB EVB board
+Subject: [PATCH 09/29] Add support for SCM 2GB EVB board
 
 Add support for SCM 2GB EVB board
 
@@ -415,5 +415,5 @@ index 0000000..74ac50e
 +CONFIG_DM=y
 +CONFIG_DM_THERMAL=y
 -- 
-1.9.1
+2.7.4
 

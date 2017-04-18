@@ -1,7 +1,7 @@
 From e6676e88a1d65a705453beecff4c9a47b24bb69e Mon Sep 17 00:00:00 2001
 From: Juan Gutierrez <juan.gutierrez@nxp.com>
 Date: Mon, 11 Apr 2016 13:31:19 -0500
-Subject: [PATCH 23/23] scm config: Use default ARCR Dynamic Jump params for
+Subject: [PATCH 23/29] scm config: Use default ARCR Dynamic Jump params for
  512 and 2GB
 
 This is the same fix applied on previous patch but now for
@@ -48,5 +48,5 @@ index bb3d542..6bc6503 100755
  
  /* Channel 0 */
 -- 
-1.9.1
+2.7.4
 

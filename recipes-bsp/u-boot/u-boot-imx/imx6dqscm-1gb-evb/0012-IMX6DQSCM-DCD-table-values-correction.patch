@@ -1,7 +1,7 @@
 From 49cedabf67ad91ffba0fa0183c914178245742c3 Mon Sep 17 00:00:00 2001
 From: Alejandro Sierra <b18039@freescale.com>
 Date: Mon, 18 Jan 2016 18:32:42 -0600
-Subject: [PATCH 12/21] IMX6DQSCM DCD table values correction
+Subject: [PATCH 12/29] IMX6DQSCM DCD table values correction
 
 CS0_END and CS1_END values were wrong for 2GB fix mode
 configuration on IMX6DQSCM DCD table.
@@ -34,5 +34,5 @@ index 33ae79d..0c3acad 100644
  
  DATA 4, 0x021b4400, 0x11420000
 -- 
-1.9.1
+2.7.4
 

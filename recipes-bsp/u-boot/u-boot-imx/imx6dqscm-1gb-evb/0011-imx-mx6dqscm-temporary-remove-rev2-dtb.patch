@@ -1,7 +1,7 @@
 From 65996ca9a3bd27ba18bcee0602d86f788dc4c7e0 Mon Sep 17 00:00:00 2001
 From: Alejandro Sierra <b18039@freescale.com>
 Date: Fri, 15 Jan 2016 11:15:52 -0600
-Subject: [PATCH 11/21] imx: mx6dqscm: temporary remove rev2 dtb
+Subject: [PATCH 11/29] imx: mx6dqscm: temporary remove rev2 dtb
 
 Temporary remove QWKS rev2 dtb file support.
 
@@ -32,5 +32,5 @@ index c677982..58587a8 100644
  CONFIG_TARGET_MX6DQSCMQWKS=y
  CONFIG_SYS_MALLOC_F=y
 -- 
-1.9.1
+2.7.4
 

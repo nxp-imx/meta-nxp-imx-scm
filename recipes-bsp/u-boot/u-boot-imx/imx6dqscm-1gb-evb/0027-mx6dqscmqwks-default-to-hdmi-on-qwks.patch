@@ -1,7 +1,7 @@
 From 183a2073759b5abc6a58a26143387f1d88cfe022 Mon Sep 17 00:00:00 2001
 From: Juan Gutierrez <juan.gutierrez@nxp.com>
 Date: Mon, 6 Mar 2017 18:18:56 -0600
-Subject: [PATCH 2/4] mx6dqscmqwks: default to hdmi on qwks
+Subject: [PATCH 27/29] mx6dqscmqwks: default to hdmi on qwks
 
 Set HDMI as the primary display on qwks board
 

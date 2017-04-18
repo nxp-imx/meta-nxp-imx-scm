@@ -1,7 +1,7 @@
 From 60bb0e81a46bea4786f3046179f7f4b3f3a71dc0 Mon Sep 17 00:00:00 2001
 From: Alejandro Sierra <b18039@freescale.com>
 Date: Tue, 16 Feb 2016 15:16:59 -0600
-Subject: [PATCH 19/21] Add support for imx6dqscm HVB board
+Subject: [PATCH 19/29] Add support for imx6dqscm HVB board
 
 Support added for imx6dqscm HVB validation board.
 
@@ -98,5 +98,5 @@ index f65b1e7..e1babdc 100644
  #define CONFIG_DMFC				"dmfc=3"
  #define PHYS_SDRAM_SIZE		(1u * 1024 * 1024 * 1024)
 -- 
-1.9.1
+2.7.4
 

@@ -1,7 +1,7 @@
 From 192cb5649040a00c67d88bfa2b0a2cf0ef295b8e Mon Sep 17 00:00:00 2001
 From: Alejandro Sierra <b18039@freescale.com>
 Date: Mon, 15 Feb 2016 18:01:56 -0600
-Subject: [PATCH 18/21] Add partitions for imx6dqscm internal SPI-NOR
+Subject: [PATCH 18/29] Add partitions for imx6dqscm internal SPI-NOR
 
 Uboot parameters added to set kernel partitions for imx6dqscm
 internal 16MB SPI-NOR. This allows the option to load fully Linux image
@@ -146,5 +146,5 @@ index 3fd4ee1..f65b1e7 100644
 +#endif
 +#endif                         /* __MX6SCMQSB_CONFIG_H */
 -- 
-1.9.1
+2.7.4
 

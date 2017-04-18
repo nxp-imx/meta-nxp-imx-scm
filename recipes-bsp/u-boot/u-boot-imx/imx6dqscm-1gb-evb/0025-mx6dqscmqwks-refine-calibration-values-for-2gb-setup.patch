@@ -1,7 +1,7 @@
-From 3df6f4e1477e39961b0874a45bafa38f16af16e5 Mon Sep 17 00:00:00 2001
+From d5bb90d390240b4f4ff8d042fa35f7fdc34b1b35 Mon Sep 17 00:00:00 2001
 From: Alejandro Sierra <b18039@freescale.com>
 Date: Mon, 17 Oct 2016 10:28:00 -0500
-Subject: [PATCH 2/2] mx6dqscmqwks: refine calibration values for 2gb setup
+Subject: [PATCH 25/29] mx6dqscmqwks: refine calibration values for 2gb setup
 
 Signed-off-by: Alejandro Sierra <b18039@freescale.com>
 ---

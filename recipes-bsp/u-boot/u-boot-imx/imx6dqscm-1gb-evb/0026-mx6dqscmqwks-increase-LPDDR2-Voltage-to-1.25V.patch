@@ -1,7 +1,7 @@
 From c48643c1fa4bb4ce7dfbb332129443f801c28362 Mon Sep 17 00:00:00 2001
 From: Juan Gutierrez <juan.gutierrez@nxp.com>
 Date: Thu, 9 Mar 2017 10:59:05 -0600
-Subject: [PATCH 1/4] mx6dqscmqwks: increase LPDDR2 Voltage to 1.25V
+Subject: [PATCH 26/29] mx6dqscmqwks: increase LPDDR2 Voltage to 1.25V
 
 Signed-off-by: Juan Gutierrez <juan.gutierrez@nxp.com>
 ---

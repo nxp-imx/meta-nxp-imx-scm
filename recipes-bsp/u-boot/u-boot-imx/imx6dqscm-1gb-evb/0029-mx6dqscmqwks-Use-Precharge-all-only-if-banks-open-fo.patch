@@ -1,7 +1,7 @@
 From 2bcd4842bfc0294b53af39fd9f40f6ef28950171 Mon Sep 17 00:00:00 2001
 From: Juan Gutierrez <juan.gutierrez@nxp.com>
 Date: Tue, 24 Jan 2017 16:04:13 -0600
-Subject: [PATCH 4/4] mx6dqscmqwks: Use Precharge all, only if banks open for
+Subject: [PATCH 29/29] mx6dqscmqwks: Use Precharge all, only if banks open for
  MMDCx_MDSCR[CMD]
 
 Signed-off-by: Juan Gutierrez <juan.gutierrez@nxp.com>

@@ -1,7 +1,7 @@
 From eca6fb3dfbba0bd4cc67419772359119be974801 Mon Sep 17 00:00:00 2001
 From: Alejandro Sierra <b18039@freescale.com>
 Date: Thu, 19 Nov 2015 12:56:57 -0600
-Subject: [PATCH 05/21] Modify USDHC2 card detect (CD) GPIO pin
+Subject: [PATCH 05/29] Modify USDHC2 card detect (CD) GPIO pin
 
 Change Card Detect pin to GPIO_4_GPIO1_IO04 on USDHC2 port
 
@@ -33,5 +33,5 @@ index 75d5007..9a74f38 100644
  
  int board_mmc_getcd(struct mmc *mmc)
 -- 
-1.9.1
+2.7.4
 

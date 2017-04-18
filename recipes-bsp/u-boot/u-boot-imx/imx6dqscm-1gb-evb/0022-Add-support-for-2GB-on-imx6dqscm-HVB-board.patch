@@ -1,7 +1,7 @@
 From 2a5553b71a85b44dc86f45334f21e8887a5f62ce Mon Sep 17 00:00:00 2001
 From: Alejandro Sierra <b18039@freescale.com>
 Date: Tue, 5 Apr 2016 10:34:08 -0500
-Subject: [PATCH 22/23] Add support for 2GB on imx6dqscm HVB board
+Subject: [PATCH 22/29] Add support for 2GB on imx6dqscm HVB board
 
 Add support for 2GB on imx6dqscm HVB board
 
@@ -47,5 +47,5 @@ index 0000000..e3519dd
 +CONFIG_DM=y
 +CONFIG_DM_THERMAL=y
 -- 
-1.9.1
+2.7.4
 

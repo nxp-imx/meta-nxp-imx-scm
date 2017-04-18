@@ -1,7 +1,7 @@
 From bc61a57d788144a0a0939bbbdd55cba21090a0fc Mon Sep 17 00:00:00 2001
 From: Alejandro Sierra <b18039@freescale.com>
 Date: Fri, 4 Dec 2015 13:31:47 -0600
-Subject: [PATCH 07/21] Ethernet enable on iMX6scm EVB board
+Subject: [PATCH 07/29] Ethernet enable on iMX6scm EVB board
 
 Micrel ksz9031 RGMII phy enabled on EVB board
 
@@ -101,5 +101,5 @@ index dbe7786..6758ba3 100644
  /*#define CONFIG_MXC_EPDC*/
  
 -- 
-1.9.1
+2.7.4
 

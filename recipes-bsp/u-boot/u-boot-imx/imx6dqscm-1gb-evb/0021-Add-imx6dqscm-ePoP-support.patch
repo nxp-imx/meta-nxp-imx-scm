@@ -1,7 +1,7 @@
 From f950e4773ac12fd5c7718e899016133ea68c40c8 Mon Sep 17 00:00:00 2001
 From: Alejandro Sierra <b18039@freescale.com>
 Date: Thu, 31 Mar 2016 14:20:32 -0500
-Subject: [PATCH 21/21] Add imx6dqscm ePoP support
+Subject: [PATCH 21/29] Add imx6dqscm ePoP support
 
 Add imx6dqscm ePoP support. This support was added for
 the following boards.
@@ -285,5 +285,5 @@ index e1babdc..3ce9360 100644
  #define CONFIG_NR_DRAM_BANKS            2
  #ifdef CONFIG_SCM_LPDDR2_2GB
 -- 
-1.9.1
+2.7.4
 

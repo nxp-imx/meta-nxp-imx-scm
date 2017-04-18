@@ -1,7 +1,7 @@
 From 692fc991ac7324f324004f0d301a0f3c1ba9402b Mon Sep 17 00:00:00 2001
 From: Alejandro Sierra <Alejandro.Sierra@freescale.com>
 Date: Wed, 4 Nov 2015 20:29:57 -0600
-Subject: [PATCH 02/21] Added LPDDR2 Interleave Mode support
+Subject: [PATCH 02/29] Added LPDDR2 Interleave Mode support
 
 Added LPDDR2 Interleave Mode support on SCM FreedomX R1.0 and EVB boards
 
@@ -127,5 +127,5 @@ index 64e398e..dbe7786 100644
   * imx6 q/dl/solo pcie would be failed to work properly in kernel, if
   * the pcie module is iniialized/enumerated both in uboot and linux
 -- 
-1.9.1
+2.7.4
 

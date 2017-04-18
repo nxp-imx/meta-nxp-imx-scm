@@ -1,7 +1,7 @@
 From 238d6256fd47df2dd82e98812ef86a6dcbb2b212 Mon Sep 17 00:00:00 2001
 From: Alejandro Sierra <b18039@freescale.com>
 Date: Wed, 20 Jan 2016 14:11:49 -0600
-Subject: [PATCH 13/21] include LPDDR2 interleave and fix modes IMX6DQSCM
+Subject: [PATCH 13/29] include LPDDR2 interleave and fix modes IMX6DQSCM
 
 LPDDR2 interleave and fix modes included for IMX6DQSCM boards:
     - mx6dqscm qwks rev 1
@@ -310,5 +310,5 @@ index 74ac50e..723bef2 100644
  CONFIG_TARGET_MX6DQSCMQWKS=y
  CONFIG_SYS_MALLOC_F=y
 -- 
-1.9.1
+2.7.4
 

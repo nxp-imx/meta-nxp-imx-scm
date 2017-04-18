@@ -1,7 +1,7 @@
 From 3f8322c9994847787255d226ada32c6b68eec143 Mon Sep 17 00:00:00 2001
 From: Alejandro Sierra <b18039@freescale.com>
 Date: Tue, 17 Jan 2017 11:52:38 -0600
-Subject: [PATCH 3/4] mx6dqscmqwks: redefine calibration values for 2gb setup
+Subject: [PATCH 28/29] mx6dqscmqwks: redefine calibration values for 2gb setup
 
 Adjust DCD values per performance testing
 

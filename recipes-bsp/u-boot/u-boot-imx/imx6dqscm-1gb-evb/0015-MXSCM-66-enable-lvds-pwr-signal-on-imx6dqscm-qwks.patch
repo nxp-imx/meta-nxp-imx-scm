@@ -1,7 +1,7 @@
 From 6036d0d0bb29405b2ccecd825ace6e736b45ba1f Mon Sep 17 00:00:00 2001
 From: Alejandro Sierra <b18039@freescale.com>
 Date: Wed, 3 Feb 2016 11:57:54 -0600
-Subject: [PATCH 15/21] MXSCM-66: enable lvds pwr signal on imx6dqscm qwks
+Subject: [PATCH 15/29] MXSCM-66: enable lvds pwr signal on imx6dqscm qwks
 
 Enable LVDS power signal on imx6dqscm qwks board to show splash image
 
@@ -68,5 +68,5 @@ index 618ed11..27f7063 100644
  #endif /* CONFIG_VIDEO_IPUV3 */
  
 -- 
-1.9.1
+2.7.4
 
